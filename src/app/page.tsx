@@ -1,3 +1,4 @@
+"use client";
 import {
   Accordion,
   AccordionContent,
@@ -28,8 +29,16 @@ import LoadingElement from "./LoadingElement";
 import LoadingSkelet from "./skelet";
 
 export default function Home() {
+  const getData = async () => {
+    console.log("Fetching");
+    const req = await fetch(`/api`);
+    const res = await req.json();
+    console.log(res);
+  };
+
   return (
-    <main className="p-[1rem]">
+    <main className="flex flex-col gap-[1rem] p-[1rem]">
+      <button onClick={() => getData()}>Fetch</button>
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
           <AccordionTrigger>Is it accessible?</AccordionTrigger>

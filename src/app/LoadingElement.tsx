@@ -1,7 +1,7 @@
 const LoadingElement = async () => {
   const myPromise = new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(console.log("Loaded"));
+      resolve("Loaded");
     }, 3000);
   });
 

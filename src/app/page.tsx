@@ -31,7 +31,7 @@ import LoadingSkelet from "./skelet";
 export default function Home() {
   const getData = async () => {
     console.log("Fetching");
-    const req = await fetch(`/api`);
+    const req = await fetch(`http://localhost:3000/api`);
     const res = await req.json();
     console.log(res);
   };
